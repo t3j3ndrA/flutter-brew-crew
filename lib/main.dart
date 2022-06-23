@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rebeg/models/brewsdata.dart';
 import 'package:rebeg/models/couter.dart';
 import 'package:rebeg/models/itemslist.dart';
 import 'package:rebeg/models/myUser.dart';
@@ -28,11 +29,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider<Counter>(create: (context) => Counter()),
-        ChangeNotifierProvider<CartItems>(
-          create: (context) => CartItems(),
-        ),
         ChangeNotifierProvider<MyUser>(create: (context) => MyUser()),
+        ChangeNotifierProvider<AllBrewsData>(
+          create: (context) => AllBrewsData(),
+        )
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

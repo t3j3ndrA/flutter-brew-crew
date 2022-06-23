@@ -94,7 +94,9 @@ class _SignInState extends State<Register> {
                             .updateUid(result['uid']);
                         await DatabaseServices().addData(
                             brewData: BrewData(
-                                sugar: 'medium', cups: '10', strength: 100),
+                                sugar: 'medium',
+                                name: 'Tejendra',
+                                strength: 100),
                             uid: Provider.of<MyUser>(context, listen: false)
                                 .uid);
                       } else {
