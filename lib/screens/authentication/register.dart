@@ -20,7 +20,7 @@ class _SignInState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.brown[50],
+        backgroundColor: Colors.brown[100],
         appBar: AppBar(
           title: Text("Brew Crew Sign In"),
           backgroundColor: Colors.brown[500],

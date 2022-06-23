@@ -18,7 +18,3 @@ class Wrapper extends StatelessWidget {
         : Home();
   }
 }
-// Consumer<MyUser>(builder: (context, value, child) {
-//       child:
-//       return (value.uid == '' ? AuthenticateScreen() : Home());
-//     });
