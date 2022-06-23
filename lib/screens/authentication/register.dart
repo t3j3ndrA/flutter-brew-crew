@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:provider/provider.dart';
+import 'package:rebeg/models/brewsdata.dart';
 import 'package:rebeg/models/myUser.dart';
 import 'package:rebeg/services/authServices.dart';
+import 'package:rebeg/services/database.dart';
 
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
@@ -90,6 +92,11 @@ class _SignInState extends State<Register> {
                       if (result['success'] == true) {
                         Provider.of<MyUser>(context, listen: false)
                             .updateUid(result['uid']);
+                        await DatabaseServices().addData(
+                            brewData: BrewData(
+                                sugar: 'medium', cups: '10', strength: 100),
+                            uid: Provider.of<MyUser>(context, listen: false)
+                                .uid);
                       } else {
                         setState(() {
                           error = result['message'];

@@ -6,6 +6,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:rebeg/screens/authentication/authenticate.dart';
 import 'package:rebeg/screens/home/home.dart';
 import 'package:rebeg/services/authServices.dart';
+import 'package:rebeg/services/database.dart';
 import 'package:rebeg/wrapper.dart';
 import 'firebase_options.dart';
 import 'services/authServices.dart';
@@ -17,7 +18,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
+  DatabaseServices();
   runApp(const MyApp());
 }
 
