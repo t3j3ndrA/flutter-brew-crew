@@ -10,13 +10,22 @@ class BrewList extends StatelessWidget {
   const BrewList({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final brewsList = Provider.of<AllBrewsData>(context).brewsList;
     return Container(
       child: ListView.builder(
-        itemCount: Provider.of<AllBrewsData>(context).brewsList.length,
+        itemCount: brewsList.length,
         itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(
-                '${Provider.of<AllBrewsData>(context).brewsList[index]['name']}'),
+          return Card(
+            margin: EdgeInsets.fromLTRB(20, 6, 20, 0),
+            child: ListTile(
+              leading: CircleAvatar(
+                radius: 25,
+                backgroundColor:
+                    Colors.brown[brewsList[index]['strength'] ?? 100],
+              ),
+              title: Text('${brewsList[index]['name']}'),
+              subtitle: Text('Takes ${brewsList[index]['sugar']}'),
+            ),
           );
         },
       ),

@@ -4,6 +4,7 @@ import 'package:rebeg/models/couter.dart';
 import 'package:rebeg/models/itemslist.dart';
 import 'package:rebeg/models/myUser.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:rebeg/models/myuserdata.dart';
 import 'package:rebeg/screens/authentication/authenticate.dart';
 import 'package:rebeg/screens/home/home.dart';
 import 'package:rebeg/services/authServices.dart';
@@ -32,7 +33,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<MyUser>(create: (context) => MyUser()),
         ChangeNotifierProvider<AllBrewsData>(
           create: (context) => AllBrewsData(),
-        )
+        ),
+        ChangeNotifierProvider(create: (context) => MyUserData()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
